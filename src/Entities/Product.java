@@ -1,3 +1,5 @@
+package src.Entities;
+
 public class Product {
     private int code, stock;
     private String name;
@@ -6,10 +8,8 @@ public class Product {
     //método construtor (classe abstrata)
 
     public Product(int code, String name) {
-
         this.code = code;
         this.name = name;
-
     }
     //encapsulamento - (getters and setters)
 
@@ -33,20 +33,21 @@ public class Product {
     }
 
     public void includeStock(int quantidade) {
-
         stock = stock + quantidade;
-
     }
 
     public void takeStock(int quantidade) {
 
-        if (quantidade <= stock)
-        {
+        if (quantidade <= stock) {
             stock = stock - quantidade;
-        }
-        else
-        {
+        } else {
             System.out.println("Estoque insuficiente.");
         }
+    }
+    public String toString(){
+        return "\nNome do produto: " + this.getName() +
+                "\nCódigo do produto: " + this.getCode() +
+                "\nValor do produto: " + this.getUnitValue();
+               // "\nQuantidade no estoque: " + this.getNumeroVotos();
     }
 }

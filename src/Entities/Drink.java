@@ -1,3 +1,5 @@
+package src.Entities;
+
 public class Drink extends Product{
     private String type;
 
@@ -13,5 +15,9 @@ public class Drink extends Product{
     }
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String toString(){
+        return super.toString() + "Tipo do produto: " + getType();
     }
 }

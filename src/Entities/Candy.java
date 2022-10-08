@@ -1,3 +1,4 @@
+package src.Entities;
 public class Candy extends Product {
     private String brand;
 
@@ -14,5 +15,8 @@ public class Candy extends Product {
     }
     public void setBrand(String brand) {
         this.brand = brand;
+    }
+    public String toString(){
+       return super.toString() + "Marca do produto: " + getBrand();
     }
 }

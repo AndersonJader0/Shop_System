@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Entidades/Entidades.iml" filepath="$PROJECT_DIR$/Entidades/Entidades.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/NewsstandStock_Java.iml" filepath="$PROJECT_DIR$/.idea/NewsstandStock_Java.iml" />
     </modules>
   </component>
