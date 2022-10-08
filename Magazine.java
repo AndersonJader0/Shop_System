@@ -11,7 +11,7 @@ public class Magazine extends Product{
     public String getMarca() {
         return publishingCompany;
     }
-    public void setMarca(String marca) {
-        this.publishingCompany = marca;
+    public void setMarca(String publishingCompany) {
+        this.publishingCompany = publishingCompany;
     }
 }

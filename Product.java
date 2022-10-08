@@ -1,14 +1,13 @@
 public class Product {
-    private int code;
+    private int code, stock;
     private String name;
-    private int stock;
-    private double valueUnit;
+    private double unitValue;
 
     //método construtor (classe abstrata)
 
-    public Product(int codigo, String nome) {
+    public Product(int code, String name) {
 
-        this.code = codigo;
+        this.code = code;
         this.name = name;
 
     }
@@ -27,10 +26,10 @@ public class Product {
         this.name = name;
     }
     public double getUnitValue() {
-        return valueUnit;
+        return unitValue;
     }
-    public void setUnitValue(double valorUnitario) {
-        this.valueUnit = valorUnitario;
+    public void setUnitValue(double unitValue) {
+        this.unitValue = unitValue;
     }
 
     public void includeStock(int quantidade) {
