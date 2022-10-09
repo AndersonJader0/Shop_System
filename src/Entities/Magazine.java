@@ -3,9 +3,9 @@ package src.Entities;
 public class Magazine extends Product{
     private String publishingCompany;
 
-    public Magazine (int code, String name, String
+    public Magazine (String name, double unitValue, String
             publishingCompany) {
-        super(code, name);
+        super(name, unitValue);
         this.publishingCompany = publishingCompany;
     }
     //encapsulamento (getters and setters)
@@ -17,6 +17,6 @@ public class Magazine extends Product{
         this.publishingCompany = publishingCompany;
     }
     public String toString(){
-        return super.toString() + "Editora do produto: " + this.getPublishingCompany();
+        return super.toString() + "\nEditora do produto: " + this.getPublishingCompany();
     }
 }

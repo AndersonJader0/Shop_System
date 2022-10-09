@@ -1,23 +1,27 @@
 package src.Entities;
 
+import java.util.Random;
+
 public class Product {
-    private int code, stock;
+    private int stock;
     private String name;
     private double unitValue;
 
+    Random random = new Random();
+    int randomNumber = random.nextInt(1000);
+    int identifier;
+
     //método construtor (classe abstrata)
 
-    public Product(int code, String name) {
-        this.code = code;
+    public Product(String name, double unitValue) {
+        this.identifier = randomNumber;
         this.name = name;
+        this.unitValue = unitValue;
     }
     //encapsulamento - (getters and setters)
 
-    public int getCode() {
-        return code;
-    }
-    public void setCode(int code) {
-        this.code = code;
+    public int getIdentifier(){
+        return identifier;
     }
     public String getName() {
         return name;
@@ -34,20 +38,21 @@ public class Product {
 
     public void includeStock(int quantidade) {
         stock = stock + quantidade;
+        System.out.println("Produto adicionado com sucesso!");
     }
 
     public void takeStock(int quantidade) {
 
         if (quantidade <= stock) {
             stock = stock - quantidade;
+            System.out.println("Produto retirado com sucesso!");
         } else {
             System.out.println("Estoque insuficiente.");
         }
     }
     public String toString(){
-        return "\nNome do produto: " + this.getName() +
-                "\nCódigo do produto: " + this.getCode() +
+        return "\nCódigo do produto: " + this.getIdentifier() +
+                "\nNome do produto: " + this.getName() +
                 "\nValor do produto: " + this.getUnitValue();
-               // "\nQuantidade no estoque: " + this.getNumeroVotos();
     }
 }
