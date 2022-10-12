@@ -3,8 +3,7 @@ package src.Entities;
 public class Magazine extends Product{
     private String publishingCompany;
 
-    public Magazine (String name, double unitValue, String
-            publishingCompany) {
+    public Magazine (String name, double unitValue, String publishingCompany) {
         super(name, unitValue);
         this.publishingCompany = publishingCompany;
     }

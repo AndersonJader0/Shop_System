@@ -7,6 +7,8 @@ public class Product {
     private String name;
     private double unitValue;
 
+    private static int quantity;
+
     Random random = new Random();
     int randomNumber = random.nextInt(1000);
     int identifier;
@@ -36,23 +38,13 @@ public class Product {
         this.unitValue = unitValue;
     }
 
-    public void includeStock(int quantidade) {
-        stock = stock + quantidade;
-        System.out.println("Produto adicionado com sucesso!");
-    }
 
-    public void takeStock(int quantidade) {
-
-        if (quantidade <= stock) {
-            stock = stock - quantidade;
-            System.out.println("Produto retirado com sucesso!");
-        } else {
-            System.out.println("Estoque insuficiente.");
-        }
-    }
     public String toString(){
         return "\nCódigo do produto: " + this.getIdentifier() +
                 "\nNome do produto: " + this.getName() +
-                "\nValor do produto: " + this.getUnitValue();
+                "\nValor do produto: " + this.getUnitValue() +
+                "\n";
     }
 }
+
+
