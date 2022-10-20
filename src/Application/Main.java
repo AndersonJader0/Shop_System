@@ -47,7 +47,7 @@ public class Main {
                 withdrawProduct();
                 break;
             case 5:
-                //deleteProduct();
+                deleteProduct();
                 break;
             case 6:
                 System.out.println("Encerrando sistema!");
@@ -144,27 +144,42 @@ public class Main {
             for (Product productt : newsstandStock) {
                 if (productt.getIdentifier() == codigoProduto) {
                     product = productt;
-
-                    if (product != null) {
-                        System.out.println("Qual valor deseja armazenar? ");
-                        int quantidade = keyboard.nextInt();
-                        Stock.setProductQuantity(quantidade);
-                    } else {
-                        System.out.println("Produto não encontrado");
-                    }
-                    operations();
                 }
             }
         }
-        return null;
+        return product;
     }
     public static void includeProduct() {
         System.out.println("Digite o código do produto que deseja armazenar a quantidade!");
         int codigoProduto = keyboard.nextInt();
         Product product = encontrarProduto(codigoProduto);
+
+        if (product != null) {
+            System.out.println("Digite a quantidade que deseja armazenar: ");
+            int quantidade = keyboard.nextInt();
+            Stock.setProductQuantity(quantidade);
+        } else {
+            System.out.println("Produto não encontrado");
+        }
+        operations();
     }
 
     public static void withdrawProduct(){
+        System.out.println("Digite o código do produto que deseja retirar: ");
+        int codigoProduto = keyboard.nextInt();
+        Product product = encontrarProduto(codigoProduto);
 
+        if (product != null) {
+            System.out.println("Digite a quantidade que deseja retirar: ");
+            int quantidade = keyboard.nextInt();
+            Stock.getProductQuantity(quantidade);
+        } else {
+            System.out.println("Produto não encontrado");
+        }
+        operations();
     }
+    public static void deleteProduct(){
+        System.out.println("Digite o código do produto que deseja retirar: ");
+    }
+
 }
