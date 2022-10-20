@@ -4,8 +4,8 @@ public class Drink extends Product{
     private String type;
 
     //método construtor
-    public Drink (String name, double unitValue, String type) {
-        super(name, unitValue);
+    public Drink (String name, double unitValue,int quantity, String type) {
+        super(name, unitValue, quantity);
         this.type = type;
     }
     //encapsulamento (getters and setters)

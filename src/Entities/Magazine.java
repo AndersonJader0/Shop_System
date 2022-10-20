@@ -3,8 +3,8 @@ package src.Entities;
 public class Magazine extends Product{
     private String publishingCompany;
 
-    public Magazine (String name, double unitValue, String publishingCompany) {
-        super(name, unitValue);
+    public Magazine (String name, double unitValue, int quantity, String publishingCompany) {
+        super(name, unitValue, quantity);
         this.publishingCompany = publishingCompany;
     }
     //encapsulamento (getters and setters)

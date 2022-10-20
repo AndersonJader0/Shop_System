@@ -44,7 +44,7 @@ public class Main {
                 includeProduct();
                 break;
             case 4:
-                //withdrawProduct();
+                withdrawProduct();
                 break;
             case 5:
                 //deleteProduct();
@@ -80,10 +80,12 @@ public class Main {
             System.out.println("\nValor: ");
             double unitValue = keyboard.nextDouble();
 
+            int quantity = 0;
+
             System.out.println("\nEditora: ");
             String publishingCompany = keyboard.next();
 
-            Magazine magazine = new Magazine(name, unitValue, publishingCompany);
+            Magazine magazine = new Magazine(name, unitValue, quantity, publishingCompany);
             newsstandStock.add(magazine);
             System.out.println("|--------- Produto registrado com sucesso! ---------|");
             operations();
@@ -95,25 +97,29 @@ public class Main {
             System.out.println("\nValor: ");
             double unitValue = keyboard.nextDouble();
 
+            int quantity = 0;
+
             System.out.println("\nTipo: ");
             String type = keyboard.next();
 
-            Drink drink = new Drink(name, unitValue, type);
+            Drink drink = new Drink(name, unitValue, quantity, type);
             newsstandStock.add(drink);
             System.out.println("|--------- Produto registrado com sucesso! ---------|");
             operations();
 
         } else if (productChoice == 3) {
-            System.out.println("\nNome: ");   //CODE NÃO ESQUECER DE TENTAR.
+            System.out.println("\nNome: ");
             String name = keyboard.next();
 
             System.out.println("\nValor: ");
             double unitValue = keyboard.nextDouble();
 
+            int quantity = 0;
+
             System.out.println("\nMarca: ");
             String brand = keyboard.next();
 
-            Candy candy = new Candy(name, unitValue, brand);
+            Candy candy = new Candy(name, unitValue, quantity, brand);
             newsstandStock.add(candy);
             System.out.println("|--------- Produto registrado com sucesso! ---------|");
             operations();
@@ -131,10 +137,34 @@ public class Main {
             operations();
         }
     }
-    public static void includeProduct() {
+
+    private static Product encontrarProduto(int codigoProduto) {
         float stock = 500;
-        System.out.println("Digite a quantidade que deseja armazenar: ");
-        int quantidade = keyboard.nextInt();
-        product.setProductQuantity(quantidade);
+        if (newsstandStock.size() > 0) {
+            for (Product productt : newsstandStock) {
+                if (productt.getIdentifier() == codigoProduto) {
+                    product = productt;
+
+                    if (product != null) {
+                        System.out.println("Qual valor deseja armazenar? ");
+                        int quantidade = keyboard.nextInt();
+                        Stock.setProductQuantity(quantidade);
+                    } else {
+                        System.out.println("Produto não encontrado");
+                    }
+                    operations();
+                }
+            }
+        }
+        return null;
+    }
+    public static void includeProduct() {
+        System.out.println("Digite o código do produto que deseja armazenar a quantidade!");
+        int codigoProduto = keyboard.nextInt();
+        Product product = encontrarProduto(codigoProduto);
+    }
+
+    public static void withdrawProduct(){
+
     }
 }

@@ -15,11 +15,12 @@ public class Product {
 
     //método construtor (classe abstrata)
 
-    public Product(String name, double unitValue) {
+    public Product(String name, double unitValue, int quantity) {
         this.identifier = randomNumber;
         this.name = name;
         this.unitValue = unitValue;
     }
+
     //encapsulamento - (getters and setters)
 
     public int getIdentifier(){
@@ -38,12 +39,18 @@ public class Product {
         this.unitValue = unitValue;
     }
 
+    public static void setQuantity(int quantity) {
+        Product.quantity = quantity;
+    }
+    public static int getQuantity() {
+        return quantity;
+    }
 
     public String toString(){
         return "\nCódigo do produto: " + this.getIdentifier() +
                 "\nNome do produto: " + this.getName() +
                 "\nValor do produto: " + this.getUnitValue() +
-                "\n";
+                "\nQuantidade do produto: " + getQuantity();
     }
 }
 

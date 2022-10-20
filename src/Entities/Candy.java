@@ -3,8 +3,8 @@ public class Candy extends Product {
     private String brand;
 
     //Método construtor
-    public Candy (String name, double unitValue, String brand) {
-        super(name, unitValue);
+    public Candy (String name, double unitValue, int quantity, String brand) {
+        super(name, unitValue, quantity);
         this.brand = brand;
     }
 
