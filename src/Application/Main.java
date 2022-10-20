@@ -179,7 +179,11 @@ public class Main {
         operations();
     }
     public static void deleteProduct(){
-        System.out.println("Digite o código do produto que deseja retirar: ");
+        System.out.println("Digite o código do produto que deseja deletar: ");
+        int codigoProduto = keyboard.nextInt();
+        Product product = encontrarProduto(codigoProduto);
+        newsstandStock.remove(product);
+        System.out.println("Produto deletado com sucesso!");
+        operations();
     }
-
 }
