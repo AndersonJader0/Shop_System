@@ -2,7 +2,7 @@ package src.Entities;
 
 import java.util.Random;
 
-public class Product {
+public abstract class Product {
     private int stock;
     private String name;
     private double unitValue;

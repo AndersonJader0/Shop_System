@@ -5,7 +5,6 @@ import java.util.Objects;
 import static src.Application.Main.operations;
 
 public class Usuario {
-
     private static int senha;
 
     public Usuario(int senha) {
@@ -15,7 +14,7 @@ public class Usuario {
     public static void cadastrar(int senhaCadastro) {
         Usuario usuario = new Usuario(senhaCadastro);
         System.out.println("Cadastro realizado com sucesso!");
-        SistemaLogin.operacoesL();
+        SistemaLogin.Logar();
     }
 
     public static void login(int login) {
@@ -23,7 +22,7 @@ public class Usuario {
             operations();
         } else {
             System.out.println("Não foi possível realizar o login!");
-            SistemaLogin.operacoesL();
+            SistemaLogin.Logar();
         }
     }
 }

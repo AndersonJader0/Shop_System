@@ -3,7 +3,7 @@ import src.Entities.*;
 
 import java.util.Scanner;
 import java.util.ArrayList;
-import static src.Login.SistemaLogin.operacoesL;
+import static src.Login.SistemaLogin.Logar;
 
 public class Main {
     static Scanner keyboard = new Scanner(System.in);
@@ -14,7 +14,7 @@ public class Main {
     public static void main(String[] args) {
         newsstandStock = new ArrayList<Product>();
 
-        operacoesL();
+        Logar();
     }
 
     public static void operations() {

@@ -3,7 +3,7 @@ package src.Login;
 import java.util.Scanner;
 
 public class SistemaLogin {
-    public static void operacoesL() {
+    public static void Logar() {
         Scanner keyboard = new Scanner(System.in);
         System.out.println("---------------------------------------------------------");
         System.out.println("*******  Selecione a opção que deseja efetuar  *******");
@@ -24,6 +24,9 @@ public class SistemaLogin {
             int confirmarSenha = keyboard.nextInt();
             if (senhaCadastro == confirmarSenha) {
                 Usuario.cadastrar(senhaCadastro);
+            }else{
+                System.out.println("As senhas não são iguais!");
+                Logar();
             }
         }
     }
