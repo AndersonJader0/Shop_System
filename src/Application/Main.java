@@ -3,6 +3,8 @@ import src.Entities.*;
 
 import java.util.Scanner;
 import java.util.ArrayList;
+import static src.Login.SistemaLogin.operacoesL;
+
 public class Main {
     static Scanner keyboard = new Scanner(System.in);
     static ArrayList<Product> newsstandStock;
@@ -12,8 +14,7 @@ public class Main {
     public static void main(String[] args) {
         newsstandStock = new ArrayList<Product>();
 
-
-        operations();
+        operacoesL();
     }
 
     public static void operations() {
@@ -74,8 +75,9 @@ public class Main {
         productChoice = keyboard.nextInt();
 
         if (productChoice == 1) {
+
             System.out.println("\nNome: ");
-            String name = keyboard.next();
+            String name = keyboard.nextLine();
 
             System.out.println("\nValor: ");
             double unitValue = keyboard.nextDouble();
