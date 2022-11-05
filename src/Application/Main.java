@@ -10,7 +10,7 @@ import static src.Loja.SystemShop.shopInterface;
 
 public class Main {
     static Scanner keyboard = new Scanner(System.in);
-    static ArrayList<Product> newsstandStock;
+    public static ArrayList<Product> newsstandStock;
     public static ArrayList<Product> carrinho;
     public static Product product;
 
@@ -60,7 +60,7 @@ public class Main {
                 //System.exit(0);
                 Logar();
             default:
-                System.out.println("Opção inválida!>");
+                System.out.println("Opção inválida!");
                 operations();
                 break;
         }
@@ -154,26 +154,6 @@ public class Main {
                 }else{
                     System.out.println("Não foi possível encontrar o produto!");
                     operations();
-                }
-            }
-        }
-        return product;
-    }
-
-    public static Product encontrarProdutoNome(String nomeProduto) {
-        if (carrinho.size() > 0) {
-            for (Product productt : carrinho) {
-                if (Objects.equals(productt.getName(),nomeProduto)) {
-                    product = productt;
-                    System.out.println(product);
-                    System.out.println("Gostaria de adicionar o produto no carrinho? S/N");
-                    char option = keyboard.next().charAt(0);
-                    if(Objects.equals(option, 'S')){
-                        adicionarCarrinho(product);
-                    }
-                }else{
-                    System.out.println("Não foi possível encontrar o produto!");
-                    shopInterface();
                 }
             }
         }
