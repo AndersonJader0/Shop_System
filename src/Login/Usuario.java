@@ -1,5 +1,7 @@
 package src.Login;
 
+import src.Loja.SystemShop;
+
 import java.util.Objects;
 
 import static src.Application.Main.operations;
@@ -19,7 +21,8 @@ public class Usuario {
 
     public static void login(int login) {
         if (Objects.equals(login, senha)) {
-            operations();
+            //operations();
+            SystemShop.shopInterface();
         } else {
             System.out.println("Não foi possível realizar o login!");
             SistemaLogin.Logar();
