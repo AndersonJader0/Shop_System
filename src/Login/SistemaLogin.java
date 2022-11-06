@@ -88,10 +88,33 @@ public class SistemaLogin {
         String confirmarEmail = keyboard.next();
     }
     public static void verificarCpf(String cpf){
-        char[] caracteres = new char[11];
+        String usuario = cpf;
 
-        for (int i = 1; i <= 8; i++) {
-            String caracter = SistemaLogin.substring(0,1);
+        String[] letras = new String[12];
+        String[] letras2 = new String [2];
+
+        int i2 = 0;
+        for (int i = 1; i <= 11; i++) {
+            String letra = usuario.substring(i2, i);
+            letras[i2] = letra;
+            System.out.println(letra);
+            i2++;
+        }if(i2 == 10){
+            int soma = Integer.parseInt(letras[0] + letras[1] + letras[2] +
+                    letras[3] + letras[4] + letras[5] +
+                    letras [6] + letras[7] + letras[8] +
+                    letras[9] + letras[10] + letras[11]);
+            int i4 = 0;
+            for(int i3 = 1; i3 <= 2; i3++) {
+                String soma2 = String.valueOf(soma);
+                String cpfAutenticacao = soma2.substring(i4, i3);
+                letras2[i3] = cpfAutenticacao;
+                i4++;
+            }if(Objects.equals(letras[0], letras[1])){
+                System.out.println("Cpf válido!");
+            }else{
+                System.out.println("Cpf inválido!");
+            }
         }
     }
 
